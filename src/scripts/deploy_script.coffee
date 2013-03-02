@@ -21,7 +21,7 @@ carrier = require('carrier')
 module.exports = (robot) ->
   robot.respond /deploy/i, (msg) ->
     #send waiting messages
-    msg.send 'Attempting deploy. Please hold.'
+    msg.send 'Attempting deploy. Please hold...'
     msg.send msg.random hackers
     
     cap = spawn 'cd ~/apps/govocab/; git pull origin master; cap deploy'
