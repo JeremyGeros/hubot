@@ -14,7 +14,7 @@ hackers = [
   "http://hubot-assets.s3.amazonaws.com/hackers/7.gif",
 ]
 
-spawn = require('child_process').spawn
+spawn = require('child_process').exec
 carrier = require('carrier')
  
  
@@ -24,7 +24,7 @@ module.exports = (robot) ->
     msg.send 'Attempting deploy. Please hold...'
     msg.send msg.random hackers
     
-    cap = spawn 'cd /root/apps/govocab/; /usr/bin/git pull origin master; /usr/local/bin/cap deploy'
+    cap = spawn '/usr/bin/git pull origin master; /usr/local/bin/cap deploy', {cwd: '/root/apps/govocab/'}
     capout = carrier.carry cap.stdout
     caperr = carrier.carry cap.stderr
     capout.on 'line', (line) ->
