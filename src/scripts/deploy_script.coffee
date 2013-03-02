@@ -24,7 +24,7 @@ module.exports = (robot) ->
     msg.send 'Attempting deploy. Please hold...'
     msg.send msg.random hackers
     
-    cap = spawn 'cd ~/apps/govocab/; git pull origin master; cap deploy'
+    cap = spawn 'cd /root/apps/govocab/; /usr/bin/git pull origin master; /usr/local/bin/cap deploy'
     capout = carrier.carry cap.stdout
     caperr = carrier.carry cap.stderr
     capout.on 'line', (line) ->
