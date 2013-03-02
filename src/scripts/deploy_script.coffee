@@ -25,6 +25,7 @@ module.exports = (robot) ->
     msg.http("http://localhost:4567/deploy")
     .get() (err, res, body) ->
       if res.statusCode == 404
+        msg.send body
         msg.send 'Something went horribly wrong'
       else
         msg.send 'Deployed like a boss'
