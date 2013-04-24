@@ -28,6 +28,7 @@ module.exports = (robot) ->
     capout = carrier.carry cap.stdout
     caperr = carrier.carry cap.stderr
     capout.on 'line', (line) ->
+      msg.send 'Working...'
       msg.send line
     caperr.on 'line', (line) ->
       msg.send line
