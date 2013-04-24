@@ -9,6 +9,7 @@
 
 module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
+    console.log("sdf")
     imageMe msg, msg.match[3], (url) ->
       msg.send url
 
