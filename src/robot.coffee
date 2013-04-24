@@ -69,7 +69,6 @@ class Robot
   #
   # Returns nothing.
   respond: (regex, callback) ->
-    console.log(regex)
     re = regex.toString().split('/')
     re.shift()           # remove empty first item
     modifiers = re.pop() # pop off modifiers
@@ -119,6 +118,7 @@ class Robot
   #
   # Returns nothing.
   receive: (message) ->
+    console.log(message)
     results = []
     for listener in @listeners
       try
