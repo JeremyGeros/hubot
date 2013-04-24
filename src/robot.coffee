@@ -118,10 +118,11 @@ class Robot
   #
   # Returns nothing.
   receive: (message) ->
-    console.log(message)
+    console.log(@listeners)
     results = []
     for listener in @listeners
       try
+        console.log("bb")
         results.push listener.call(message)
         break if message.done
       catch error
