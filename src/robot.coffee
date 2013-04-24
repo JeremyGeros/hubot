@@ -48,6 +48,7 @@ class Robot
     @parseVersion()
     @setupConnect() if httpd
     @loadAdapter adapterPath, adapter if adapter?
+    console.log("fd")
 
   # Public: Adds a Listener that attempts to match incoming messages based on
   # a Regex.
