@@ -122,12 +122,12 @@ class Robot
     results = []
     for listener in @listeners
       try
+        console.log(listener)
         results.push listener.call(message)
         break if message.done
       catch error
         @logger.error "Unable to call the listener: #{error}\n#{error.stack}"
         false
-    console.log(results)
     if message not instanceof CatchAllMessage and results.indexOf(true) is -1
       @receive new CatchAllMessage(message)
 
